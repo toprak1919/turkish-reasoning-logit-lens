@@ -1,0 +1,16 @@
+idx,answer,n_steps,pred_en,pred_tr,correct_en,correct_tr
+655,10,2,10,20,True,False
+1036,10,2,10,10,True,True
+124,10,2,30,7,False,False
+670,4,2,4,4,True,True
+928,60,3,78,8,False,False
+53,40,3,-40,22,False,False
+703,50,4,8,50,False,True
+1169,2,4,5,4,False,False
+204,98,4,98,120,True,False
+1082,2,3,4,10,False,False
+912,6,3,15,6,False,True
+434,5,5,3,5,False,True
+773,10,5,137,40,False,False
+1177,17,5,17,17,True,True
+533,300,3,2400,4,False,False

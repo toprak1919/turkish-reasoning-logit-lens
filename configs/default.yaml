@@ -1,0 +1,41 @@
+model:
+  base_name: "meta-llama/Meta-Llama-3-8B"
+  instruct_name: "meta-llama/Meta-Llama-3-8B-Instruct"
+  dtype: "float16"
+  device_map: "auto"
+  n_layers: 32
+  hidden_dim: 4096
+
+data:
+  en_dataset: "openai/gsm8k"
+  tr_dataset: "malhajar/gsm8k-tr"
+  en_split: "test"
+  tr_split: "test"
+  n_problems: 30
+  seed: 42
+  difficulty_bins: [2, 4, 6, 8]
+
+analysis:
+  n_hidden_states: 33  # embedding + 32 transformer layers
+  layer_regions:
+    early: [0, 10]
+    mid: [11, 21]
+    late: [22, 32]
+  divergence_threshold: 0.1
+  top_k: 10
+  n_permutations: 10000
+
+visualization:
+  figsize_single: [8, 6]
+  figsize_heatmap: [14, 10]
+  figsize_trajectory: [10, 6]
+  dpi: 300
+  colormap_divergence: "RdBu_r"
+  colormap_probability: "YlOrRd"
+  font_family: "serif"
+  color_en: "#2563EB"
+  color_tr: "#DC2626"
+
+paths:
+  figures: "results/figures"
+  cache: "results/cached_activations"
